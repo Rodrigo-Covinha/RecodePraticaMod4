@@ -1,0 +1,44 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+*{
+	margin: 0;
+	padding:0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+
+h1 {
+	font-size: 4rem;
+	color: #339af0;
+	font-weight: 700;
+	margin: 15px;
+}
+.btn1 {
+	margin: 80px 40px 0px 50px;
+	text-decoration: none;
+	background-color: #66bbff;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 500;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+}
+#tabela {
+	margin-top:30px;
+}
+#tabela th {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+	background-color: #66bbff;
+	color: #fff;
+	text-align: center;
+}
+#tabela td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+}

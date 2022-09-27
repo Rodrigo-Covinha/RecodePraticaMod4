@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"  integrity ="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="Style.css" />
+
+
+<meta charset="UTF-8">
+<title>Destinos Code Travel</title>
+</head>
+<body class="container-fluid">
+	<section id="form1" class="form">
+        <div class="col-md-12 col-md-offset-1">
+          <div class="booking-form">
+            <form name="cadastro" action="inserir">
+              <div class="form-group">
+               <h1>Encontre Um Destino</h1>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Origem: </span>
+                    <input name="origem" class="form-control" type="text" placeholder="Cidade de origem">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Destino: </span>
+                    <input name="destino" class="form-control" type="text" placeholder="Cidade de Destino">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Data de Ida</span>
+                    <input name="dataida" class="form-control" type="date" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Data de Volta</span>
+                    <input name="datavolta" class="form-control" type="date" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Adultos (18+)</span>
+                    <select name="adulto" class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Crianças (0-17)</span>
+                    <select name="crianca" class="form-control">
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Escolha classe: </span>
+                    <select name="classe" class="form-control">
+                      <option>Classe Economica</option>
+                      <option>Classe Executiva</option>
+                      <option>Primeira Classe</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-btn">
+                <button class="submit-btn" type="submit" onclick="validar()">Mostrar Passagens</button>
+                   </div>
+                   <br>
+                   <div class="form-btn">
+                      <button class="submit-btn" type="reset">Limpar Cadastro</button>
+                   </div>
+                 </form>
+                </div>
+              </div>
+      </section>
+    <script src="Scripts/validador.js"></script>
+</body>
+</html>
