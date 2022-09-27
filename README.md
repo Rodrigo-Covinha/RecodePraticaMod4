@@ -1,9 +1,9 @@
 # RecodePraticaMod4
 atividade pratica, com CRUD java Web, Servlet e Tomcat.
 
-Fala Grabriel Tudo bem? 
+Fala Gabriel Tudo bem? 
 
-comigo nem tanto nunca sofri tanto pra entregar um trabalho, muito sem tempo! rsrs
+comigo nem tanto, nunca sofri tanto pra entregar um trabalho, muito sem tempo! rsrs
 não se chegara completo pra vc mais estou aqui arrando a pele dos dedos pra entregar algo funcional(perdi muito tempo apanhando da Versão do TomCat que estava 
 intalado no meu PC estava dando varios erros na versão 10.xx, quando desci pra 9.xx passou a fluir, mas tem muita coisa pra fazer ainda.
 
