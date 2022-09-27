@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-
 public class AgendamentoDAO {
 
 	private String driver = "com.mysql.cj.jdbc.Driver";
@@ -36,7 +35,7 @@ public class AgendamentoDAO {
 	// }catch(Exception e){
 	// System.out.println(e);
 
-	              /** CRUD CREATE **/
+	/** CRUD CREATE **/
 
 	public void inserirCadastro(JavaBeans cadastro) {
 		String create = "INSERT INTO agendamento (classe,dataIda,dataVolta,qtdCrianca,qtdAdulto,origem,destino) VALUES ( ?, ?, ?, ?, ?, ?, ?)";
@@ -66,10 +65,10 @@ public class AgendamentoDAO {
 			System.out.println(e);
 		}
 	}
-	
-	              /** CRUD READ **/
-	
-	public ArrayList<JavaBeans> listarCadastros(){
+
+	/** CRUD READ **/
+
+	public ArrayList<JavaBeans> listarCadastros() {
 		ArrayList<JavaBeans> cadastros = new ArrayList<>();
 		String read = "select * from agendamento";
 		try {
@@ -85,8 +84,9 @@ public class AgendamentoDAO {
 				String qtdAdulto = rs.getString(6);
 				String origem = rs.getString(7);
 				String destino = rs.getString(8);
-				
-				cadastros.add(new JavaBeans(idAgenda, classe, dataIda, dataVolta, qtdCrianca, qtdAdulto, origem, destino));
+
+				cadastros.add(
+						new JavaBeans(idAgenda, classe, dataIda, dataVolta, qtdCrianca, qtdAdulto, origem, destino));
 			}
 			con.close();
 			return cadastros;
@@ -95,7 +95,8 @@ public class AgendamentoDAO {
 			return null;
 		}
 	}
-	              /** CRUD UPDATE **/
+
+	/** CRUD UPDATE **/
 	public void selecionarCadastro(JavaBeans cadastro) {
 		String read2 = "select * from agendamento where idAgenda = ?";
 		try {
@@ -103,7 +104,7 @@ public class AgendamentoDAO {
 			PreparedStatement pst = con.prepareStatement(read2);
 			pst.setInt(1, cadastro.getIdAgenda());
 			ResultSet rs = pst.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				cadastro.setIdAgenda(rs.getInt(1));
 				cadastro.setClasse(rs.getString(2));
 				cadastro.setDataIda(rs.getString(3));
@@ -117,16 +118,16 @@ public class AgendamentoDAO {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
+
 	}
+
 	public void alterarCadastro(JavaBeans cadastro) {
-		
-		
-		String create  = "update agendamento set classe=?, dataIda=?, dataVolta=?, qtdCrianca=?, qtdAdulto=?, Origem=?, Destino=? where idAgenda=?";
+
+		String create = "update agendamento set classe=?, dataIda=?, dataVolta=?, qtdCrianca=?, qtdAdulto=?, Origem=?, Destino=? where idAgenda=?";
 		try {
 			Connection con = conectar();
 			PreparedStatement pst = con.prepareStatement(create);
-			
+
 			pst.setString(1, cadastro.getClasse());
 
 			pst.setString(2, cadastro.getDataIda());
@@ -140,15 +141,34 @@ public class AgendamentoDAO {
 			pst.setString(6, cadastro.getOrigem());
 
 			pst.setString(7, cadastro.getDestino());
-			
+
 			pst.setInt(8, cadastro.getIdAgenda());
-			
+
 			pst.executeUpdate();
 			con.close();
-			
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		
-}
+
+	}
+
+	/** CRUD DELETE **/
+	public void deletarContato(JavaBeans cadastro) {
+
+		String delete = "delete from agendamento where idAgenda=?";
+		try {
+
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(delete);
+
+			pst.setInt(1, cadastro.getIdAgenda());
+			pst.executeUpdate();
+			con.close();
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+	}
 }

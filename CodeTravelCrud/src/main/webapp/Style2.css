@@ -13,11 +13,42 @@ h1 {
 	color: #339af0;
 	font-weight: 700;
 	margin: 15px;
+	
 }
-.btn1 {
-	margin: 80px 40px 0px 50px;
+h3 {
+	font-weight: 700;
+	margin: 15px;
+	
+}
+
+.btn0 {
 	text-decoration: none;
 	background-color: #66bbff;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 500;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+	
+}
+.btn1 {
+	
+	text-decoration: none;
+	background-color: #66bbff;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 500;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+}
+.btn2{
+	margin: 0px 0px 0px 10px;
+	text-decoration: none;
+	background-color: #d51213;
 	padding: 5px 10px 5px 10px;
 	color: #fff;
 	font-size: 1.2em;

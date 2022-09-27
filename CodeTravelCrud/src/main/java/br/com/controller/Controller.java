@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.model.AgendamentoDAO;
 import br.com.model.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/inserir", "/selecionar", "/alterar" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/inserir", "/selecionar", "/alterar", "/deletar" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -40,6 +40,8 @@ public class Controller extends HttpServlet {
 			listarCadastro(request, response);
 		} else if (action.equals("/alterar")) {
 			editarCadastro(request, response);
+		} else if (action.equals("/deletar")) {
+			removerCadastro(request, response);
 		} else {
 			response.sendRedirect("Index.html");
 		}
@@ -84,7 +86,7 @@ public class Controller extends HttpServlet {
 		response.sendRedirect("main");
 
 	}
-	   // Editar Cadastro
+	// Editar Cadastro
 
 	protected void listarCadastro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -106,37 +108,47 @@ public class Controller extends HttpServlet {
 
 		RequestDispatcher rd = request.getRequestDispatcher("Editar.jsp");
 		rd.forward(request, response);
-	}	
-		protected void editarCadastro(HttpServletRequest request, HttpServletResponse response)
-				throws ServletException, IOException {
-			
-			
-			
-			
-			cadastro.setOrigem( request.getParameter("origem"));
-			cadastro.setDestino( request.getParameter("destino"));
-			cadastro.setDataIda( request.getParameter("dataida"));
-			cadastro.setDataVolta( request.getParameter("datavolta"));
-			cadastro.setQtdCrianca( request.getParameter("crianca"));
-			cadastro.setQtdAdulto( request.getParameter("adulto"));
-			cadastro.setClasse( request.getParameter("classe"));
-			
-			dao.alterarCadastro(cadastro);
-			
-			response.sendRedirect("main");
-			// Teste de recebimento
-			
-		/**	  System.out.println(request.getParameter("id"));
-			  System.out.println(request.getParameter("origem"));
-			  System.out.println(request.getParameter("destino"));
-			  System.out.println(request.getParameter("dataida"));
-			  System.out.println(request.getParameter("datavolta"));
-			  System.out.println(request.getParameter("crianca"));
-			  System.out.println(request.getParameter("adulto"));
-			  System.out.println(request.getParameter("classe"));
-		**/	  
-			  
-		} 
-		
-		 
+	}
+
+	protected void editarCadastro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		cadastro.setOrigem(request.getParameter("origem"));
+		cadastro.setDestino(request.getParameter("destino"));
+		cadastro.setDataIda(request.getParameter("dataida"));
+		cadastro.setDataVolta(request.getParameter("datavolta"));
+		cadastro.setQtdCrianca(request.getParameter("crianca"));
+		cadastro.setQtdAdulto(request.getParameter("adulto"));
+		cadastro.setClasse(request.getParameter("classe"));
+
+		dao.alterarCadastro(cadastro);
+
+		response.sendRedirect("main");
+
+	}
+
+	protected void removerCadastro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		int idAgenda = Integer.parseInt(request.getParameter("idAgenda"));
+		cadastro.setIdAgenda(idAgenda);
+
+		dao.deletarContato(cadastro);
+
+		response.sendRedirect("main");
+	}
+
+	// Teste de recebimento
+
+	/**
+	 * System.out.println(request.getParameter("id"));
+	 * System.out.println(request.getParameter("origem"));
+	 * System.out.println(request.getParameter("destino"));
+	 * System.out.println(request.getParameter("dataida"));
+	 * System.out.println(request.getParameter("datavolta"));
+	 * System.out.println(request.getParameter("crianca"));
+	 * System.out.println(request.getParameter("adulto"));
+	 * System.out.println(request.getParameter("classe"));
+	 **/
+
 }

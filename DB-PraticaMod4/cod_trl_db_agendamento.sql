@@ -40,7 +40,7 @@ CREATE TABLE `agendamento` (
   KEY `FK_Agendamento_3` (`fk_Cliente_idCliente`),
   CONSTRAINT `FK_Agendamento_2` FOREIGN KEY (`fk_Passagem_CodBilhete`) REFERENCES `passagem` (`codBilhete`) ON DELETE CASCADE,
   CONSTRAINT `FK_Agendamento_3` FOREIGN KEY (`fk_Cliente_idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ CREATE TABLE `agendamento` (
 
 LOCK TABLES `agendamento` WRITE;
 /*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
-INSERT INTO `agendamento` VALUES (1,'Classe Economica','2022-09-28','2022-09-29','2','2','Dubai','Reino Unido',NULL,NULL),(2,'Classe Executiva','2022-09-29','2022-09-30','2','2','Italia','Portugal',NULL,NULL),(3,'Classe Economica','2022-09-29','2022-09-30','0','1','Mother Russia','Ucraine',NULL,NULL),(4,'Classe Executiva','2022-09-29','2022-09-30','1','1','Mother Russia','Australia',NULL,NULL),(5,'Primeira Classe','2022-09-30','2022-09-30','1','1','Brasil','Australia',NULL,NULL),(6,'Classe Executiva','2022-09-29','2022-10-01','1','2','Argentina','Chile',NULL,NULL),(7,'Primeira Classe','2022-09-29','2022-09-30','2','2','Brasil','EUA',NULL,NULL);
+INSERT INTO `agendamento` VALUES (1,'Classe Economica','2022-09-28','2022-09-29','2','2','Dubai','Reino Unido',NULL,NULL),(2,'Classe Executiva','2022-09-29','2022-09-30','2','2','Italia','Portugal',NULL,NULL),(3,'Classe Economica','2022-09-29','2022-09-30','0','1','Mother Russia','Ucraine',NULL,NULL),(4,'Classe Executiva','2022-09-29','2022-09-30','1','1','Mother Russia','Australia',NULL,NULL),(7,'Primeira Classe','2022-09-29','2022-09-30','2','2','Brasil','EUA',NULL,NULL),(8,'Primeira Classe','2022-09-29','2022-09-30','0','2','Suiça','Polonia',NULL,NULL);
 /*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-26 21:26:42
+-- Dump completed on 2022-09-26 23:36:06

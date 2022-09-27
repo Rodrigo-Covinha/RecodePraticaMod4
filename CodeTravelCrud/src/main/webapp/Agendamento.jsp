@@ -42,11 +42,15 @@
 					<td><%=lista.get(i).getQtdAdulto()%></td>
 					<td><%=lista.get(i).getOrigem()%></td>
 					<td><%=lista.get(i).getDestino()%></td>
-					<td><a href="selecionar?idAgenda=<%=lista.get(i).getIdAgenda()%>" class="btn1">Editar Cadastro</a></td>
+					<td>
+						<a href="selecionar?idAgenda=<%=lista.get(i).getIdAgenda()%>" class="btn1">Editar </a>
+						<a href="javascript: confirmar(<%=lista.get(i).getIdAgenda()%>)" class="btn2">Excluir</a>
+					</td>
 				</tr>
 			
 			<%} %>
 		</tbody>
 	</table>
+	<script src="Scripts/confirmador.js"></script>
 </body>
 </html>
